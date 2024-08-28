@@ -26,5 +26,9 @@ if __name__ == "__main__":
         # Discover files and store them in a NumPy array
         all_files_array = discover_files(directory)
 
+        # Save the array to a .npy file for communication with DatasetLoading.py
+        np.save('file_paths.npy', all_files_array)
+
         # Print the number of images found
         print(f"Number of images found: {len(all_files_array)}")
+        print("File paths saved to 'file_paths.npy'")
